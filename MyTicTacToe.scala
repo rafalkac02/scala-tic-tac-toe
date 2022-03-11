@@ -8,21 +8,20 @@ class MyTicTacToe {
 
   def printRules(): Unit = {
     println("RULES:")
-    println("The game is played on a grid that's 3 squares by 3 squares.")
-    println("There are two players: Player1 and Player2")
-    println("Player1 is O, Player2 is X. Player one starts the game by typing where they want to put circle")
-    println("Each row has a number (1, 2, 3), and each column has a letter (A, B, C) associated. " +
-      "Thus, the correct way to put mark in the grid is by typing for eg. 'A1', 'B3', 'C2' etc.")
-    println("The first player to get 3 of her marks in a row (up, down, across, or diagonally) is the winner.")
+    println("The game is played on a 3x3 grid")
+    println("Player1 is O, Player2 is X. Player one starts.")
+    println("Each column is given a letter (A-C) and each row is given a number (1-3)")
+    println("To make a move, players type two-character string with column and row index ('A1', 'B3', 'C2' etc.)")
+    println("The game ends when someone wins or the board is fully filled.")
     println()
   }
 
   def printGrid(grid: Array[Array[Char]]): Unit = {
-    def printrow() = println(s"${"-" * 16}")
+    def printRow() = println(s"${"-" * 16}")
 
     println("   | A | B | C |")
     for (i <- 0 to 2) {
-      printrow()
+      printRow()
       print(s" ${i+1} ")
       for (j <- 0 to 2) {
         print(s"| ${grid(i)(j)} ")
